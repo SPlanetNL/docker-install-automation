@@ -4,7 +4,7 @@
 # this installation must be ran with root permissions
 
 # prepare, making sure that the OS is up-to-date
-sudo apt-get update && apt-get upgrade -qy
+sudo apt-get update && sudo apt-get upgrade -qy
 
 # setup the repository
 sudo apt-get install -qy \
