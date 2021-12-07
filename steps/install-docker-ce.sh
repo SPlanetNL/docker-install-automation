@@ -22,12 +22,12 @@ echo \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 # install Docker CE
-sudo apt-get update && apt-get install -qy docker-ce docker-ce-cli containerd.io
+sudo apt-get update && sudo apt-get install -qy docker-ce docker-ce-cli containerd.io
 
 # verify installation by running one container
 sudo docker run --name="hello-world" -d hello-world
 
-if [[ "$(docker ps -a | grep "hello-world")" ]]; then
+if [[ "$(sudo docker ps -a | grep "hello-world")" ]]; then
 
   echo && echo "Docker has been installed successfully!"
 
