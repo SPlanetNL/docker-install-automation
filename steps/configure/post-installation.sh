@@ -7,7 +7,7 @@ else
   sudo groupadd docker
 fi
 
-echo "Which user will be in the Docker group for post installation? " "$user"
+echo "Which user, or users will be in the Docker group for post installation? " "$user"
 read -r user
 
 sudo usermod -aG docker "$user"
