@@ -27,5 +27,5 @@ apt-get update && apt-get install -y \
 docker run --name="hello-world" -d hello-world
 
 if [ "$( docker container inspect -f '{{.State.Running}}' 'hello-world' )" = "true" ]; then
-  echo && echo "hello-world container has been found. Congratiulations, Docker has been installed successfully!"
+  echo && echo "hello-world container has been found!"
 fi
