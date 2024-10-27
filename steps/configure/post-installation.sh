@@ -1,13 +1,12 @@
 #!/bin/bash
 
-if [[ "$(getent group docker)" ]]; then
-  echo "Docker group exists.."
-else
-  echo "Creating Docker group.."
-  sudo groupadd docker
+if [[ ! "$(getent group docker)" ]]; then
+  groupadd docker
+  echo && echo "Created the Docker group"
 fi
 
-echo "Which user, or users will be in the Docker group for post installation? " "$user"
+echo "Which user will be in the Docker group for post installation? (Docker usage without sudo notation) " "$user"
 read -r user
 
-sudo usermod -aG docker "$user"
+# Add user to the Docker group
+usermod -aG docker "$user"
