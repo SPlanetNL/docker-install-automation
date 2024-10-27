@@ -5,14 +5,14 @@ main() {
   # Remove data
   source "steps/remove-data.sh"
 
-  # Uninstall docker-compose
-  source "steps/uninstall-docker-compose.sh"
-
   # Stop Docker service
   systemctl stop Docker
 
   # Uninstall Docker-CE
   source "steps/uninstall-docker.sh"
+
+  # Uninstall docker-compose
+  source "steps/uninstall-docker-compose.sh"
 
   # Remove Docker group
   groupdel docker
